@@ -1,0 +1,64 @@
+.accion span{
+    color: white;
+    margin-top: 18px;
+    padding: 5px;
+    border-style: solid ;
+    border-color: #2C9B80;
+    border-radius: 0.2em;
+    
+    
+}
+
+.accion span, .botnReservar {
+    background-color: #2C9B80 ;
+}
+
+.accion button{
+    padding: 0px;
+    border: none;
+    background: none;
+}
+
+ .accion span:hover, .botnReservar:hover{
+    background: #044545;
+    border-color: #044545;
+    color: white;
+}
+
+.cancelar{
+    
+    text-decoration: none;
+    color: white;
+    border-style: solid;
+    border-color: #cc153b;
+    border-radius: 0.2em;
+    background: #cc153b;
+}
+.cancelar:hover{
+    color: white;
+    background: #8c152e;
+    border-color: #8c152e;
+}
+.cancelar span{
+    font-size: 20px;
+    vertical-align: middle;
+    padding-bottom: 4px;
+    color: white;
+}
+
+ .accion span:checked, .botnReservar:checked{
+    background: #044545;
+}
+
+.botnReservar{
+    text-decoration: none;
+    color: white;
+    border-style: solid;
+     border-color: #2C9B80;
+    border-radius: 0.3em;
+    text-align: center;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+

@@ -1,0 +1,33 @@
+.btnMostarTodas, .btnAplicar, .btnDetalles{
+    text-decoration: none;
+    color: white;
+    background: #2C9B80;
+    padding: 5px;
+    border-style: solid ;
+    border-color: #2C9B80;
+    border-radius: 0.2em;
+}
+
+.btnMostarTodas:hover,.btnDetalles:hover{
+    color: white;
+}
+
+.btnMostarTodas:hover, .btnAplicar:hover,.btnDetalles:hover{
+    background: #044545;
+    border-color: #044545;
+}
+
+.btnCancelar {
+     text-decoration: none;
+    color: white;
+    border-style: solid;
+    border-color: #cc153b;
+    border-radius: 0.2em;
+    background: #cc153b;
+}
+
+.btnCancelar:hover{
+    color: white;
+    background: #8c152e;
+    border-color: #8c152e;
+}

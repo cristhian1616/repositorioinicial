@@ -1,0 +1,86 @@
+<%@ page pageEncoding="UTF-8" %>
+<header>
+
+
+    <div class="menu">
+        <nav class="navbar navbar-expand-lg navbar-dark"  >
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.jsp"><img src="imagenes/logo_hotel_secretos.png" alt="Contiene el logo de la empresa" width="100" height="40"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <% if (accedio == false) {   %>
+
+                            <a class="nav-link active" aria-current="page" href="Sesion.jsp">    <span class="material-symbols-outlined">login</span> ACCEDER</a> 
+
+
+                            <%  } else {
+
+                                nombres = usuario.getNombres();
+                                String[] nombre = nombres.toUpperCase().split(" ");
+                            %>
+
+                            <div class="btn-group" role="group">
+                                <a class="nav-link active dropdown-toggle" aria-current="page" data-bs-toggle="dropdown" href=#>   <span class="material-symbols-outlined">account_circle</span><%=nombre[0]%></a>
+
+                                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                    <li align="center"><img src="imagenes/avatar_perfil_hombre.jpg" alt="alt"/></a></li>
+                                    <li><a class="dropdown-item" href="miPerfil.jsp">Mi Perfil</a></li>
+                                    <% String tipoUsuario = usuario.getTipo_usuario();
+                                        if (tipoUsuario.equals("Cliente")) {
+                                    %>
+                                    <li><a class="dropdown-item" href="ServletMisReservas?op=mostrarTodas">Mis reservas</a></li>
+                                    <%}else{%>
+                                    <li><a class="dropdown-item" href="ServletMisReservas?op=mostrarTodasAdmi">Reservaciones</a></li>
+                                    <%}%>
+                                    <li><a class="dropdown-item" href="ServletSesion?op=cerrar">Cerrar Sesión</a></li>
+                                </ul>
+                            </div>
+
+                            <% }%>                                 
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="ServletHabitac">    <span class="material-icons">bed</span> HABITACIONES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="reservar.jsp">   <span class="material-icons">book_online</span> RESERVAR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="Servletofertas">   <span class="material-icons">local_offer</span> OFERTAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="ubicacion.jsp">    <span class="material-icons">location_on</span> UBICACION</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="contactenos.jsp">    <span class="material-icons">contact_mail</span> CONTACTANOS  </a> 
+                        </li>
+                    </ul>
+                    <div class="buscador d-flex" style="padding-bottom: 15px">
+                        <input id="buscar" class="form-control me-2" type="text" placeholder="Buscar" aria-label="Search">
+                        <button id="btn" class="btn btn text-success bg-body" type="submit">  <span class="material-icons">search</span>  </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </div>   
+    <script>
+        btn.onclick = function () {
+            var buscar = document.getElementById("buscar").value;
+            if (buscar === 'reservar') {
+                window.location.href = 'reservar.jsp';
+            } else if (buscar === 'ubicacion') {
+                window.location.href = 'ubicacion.jsp';
+            } else if (buscar === 'contactenos') {
+                window.location.href = 'contactenos.jsp';
+            } else if (buscar === 'habitaciones') {
+                window.location.href = 'ServletHabitac';
+            } else if (buscar === 'ofertas') {
+                window.location.href = 'Servletofertas';
+            }
+        };
+    </script>
